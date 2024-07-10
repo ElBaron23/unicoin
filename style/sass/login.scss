@@ -1,0 +1,460 @@
+$colorPrimary:#1a1a1a;
+$darkcolor:#000;
+$color3:#2d2d2d;
+$color1:#1164fe;
+$color4:#3c86ff;
+$lightColor:#feffff;
+$font:Arial, Helvetica, sans-serif;
+$transition1:0.3s;
+$transition2:0.4s;
+$transition3:0.5s;
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    // background-image: linear-gradient($darkcolor,$colorPrimary,$color3);
+    .strock{
+        width:100%;
+        height: 100%;
+        background: $color4;
+        position: absolute;
+        z-index: -2;
+        border-radius: 50%;
+        transform: translateX(50%);
+        opacity: 80%;
+    }
+  
+}
+.container{
+    width: 90%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    box-shadow: 0 3px 10px rgba($color: #000000, $alpha: 0.5);
+    left: 50%;
+    transform: translate(-50%,-50%);
+    justify-content: center;
+    border-radius: 25px;
+  background-image: linear-gradient($color1 50%,$lightColor 50%);
+    .content{
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        background: $color1;
+        border-radius: 25px;
+        h1{
+            font-family: $font;
+            margin-bottom: 16px;
+            width: 100%;
+            text-align: center;
+            color:$lightColor;
+            font-size: 26px;
+        }
+        h4{
+            color: $color3;
+            font-size: 18px;
+            margin-bottom: 8px;
+            font-family: $font;
+        }
+        button{
+            width: 60%;
+            height: 30px;
+            border-radius: 14px;
+            outline: none;
+            border: none;
+            background: $lightColor;
+            color: $color1;
+            cursor: pointer;
+            box-shadow: 0 3px 10px rgba($color: #000000, $alpha: 0.1);
+            transition: all $transition2;
+            &:hover{
+                border: 2px solid $lightColor;
+                background: $color1;
+                color: $lightColor;
+            }
+        }
+    }
+    .form{
+        background: $lightColor;
+        width: 60%;
+        height: 100%;
+        border-radius: 25px;
+        transition: all $transition3 ease;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        //box-shadow: 0 3px 10px rgba($color: #000000, $alpha: 0.3);
+        h1{
+            color: $color1;
+            font-size: 32px;
+            font-family: $font;
+        }
+        .login{
+            width: 100%;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            justify-content: center;
+            .wave{
+                margin-top: 16px;
+                position: relative;
+                .email:focus ~ .bar::before,
+                .email:focus ~ .bar::after{
+                    width: 50%;
+                }
+                .email{
+                    font-size: 16px;
+                    padding: 10px 10px 10px 5px;
+                    display: block;
+                    width: 200px;
+                    border: none;
+                    border-bottom: 2px solid $color4;
+                    background: transparent;
+                    &:focus{
+                        outline: none;
+                    }
+
+                }
+                .label{
+                    color: $color3;
+                    font-size: 16px;
+                    font-family: $font;
+                    font-weight: normal;
+                    position: absolute;
+                    pointer-events: none;
+                    left: 5px;
+                    top: 10px;
+                    display: flex;
+                }
+                .labelchar{
+                    transition: all $transition1 ease;
+                    transition-delay: calc(var(--index) * .05s);
+                }
+                .email:focus ~ label .labelchar,
+                .email:valid ~ label .labelchar{
+                    transform: translateY(-20px);
+                    font-size: 14px;
+                    color: $color1;
+                }
+                .bar{
+                    position: relative;
+                    display: block;
+                    width: 200px;
+                    &::before,&::after{
+                        content: '';
+                        height: 2px;
+                        width: 0;
+                        bottom: 1;
+                        position: absolute;
+                        background: $color1;
+                        transition:  0.2s ease all;
+                        -moz-transition: 0.2s ease all;
+                    }
+                    &::before{
+                        left: 50%;
+                    }
+                    &::after{
+                        right: 50%;
+                    }
+
+                }
+            }
+            .forgot{
+                width: 200px;
+                height: 30px;
+                margin-top: 8px;
+                a{
+                    color: $color4;
+                    font-size: 16px;
+                    text-decoration: none;
+                    cursor: pointer;
+                }
+            }
+            
+            button{
+                width: 200px;
+                height: 35px;
+                border-radius: 8px;
+                outline: none;
+                border: none;
+                background: $color1;
+                color: $lightColor;
+                font-size: 16px;
+                font-weight: normal;
+                font-family: $font;
+                margin-top: 8px;
+            }
+        }   
+    }
+  
+    .content2{
+        border-radius: 14px 0 0 14px !important;
+    }
+}   
+.display{
+    display: none !important;
+}
+
+.gologin{
+    display: none;
+}
+.button{
+    display: block !important;
+    width: 200px;
+    height: 35px;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    background: $color1;
+    color: $lightColor;
+    font-size: 16px;
+    font-weight: normal;
+    font-family: $font;
+    margin-top: 8px;
+}
+.register{
+    display: flex;
+    width: 60%;
+    height: 100%;
+    border-radius: 14px 25px 0 14px;
+    background: $lightColor ;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    h1{
+        font-size: 22px;
+        color: $color4;
+        font-family: $font;
+        margin-top: 16px;
+    }
+    form{
+        width: 100%;
+        height: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        .name{
+            width: 260px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            justify-content: space-between;
+            .fullname{
+                display: block;
+                margin-top: 16px;
+                position: relative;
+                .nameinput:focus ~ .bar::before,
+                .nameinput:focus ~ .bar::after{
+                    width: 50%;
+                }
+                .nameinput{
+                    font-size: 16px;
+                    padding: 10px 10px 10px 5px;
+                    display: block;
+                    width: 90px;
+                    border: none;
+                    border-bottom: 2px solid $color4;
+                    background: transparent;
+                    &:focus{
+                        outline: none;
+                    }
+
+                }
+                .label{
+                    color: $color3;
+                    font-size: 16px;
+                    font-family: $font;
+                    font-weight: normal;
+                    position: absolute;
+                    pointer-events: none;
+                    left: 5px;
+                    top: 10px;
+                    display: flex;
+                }
+                .labelchar{
+                    transition: all $transition1 ease;
+                    transition-delay: calc(var(--index) * .05s);
+                }
+                .nameinput:focus ~ label .labelchar,
+                .nameinput:valid ~ label .labelchar{
+                    transform: translateY(-20px);
+                    font-size: 14px;
+                    color: $color1;
+                }
+                .bar{
+                    position: relative;
+                    display: block;
+                    width: 90px;
+                    &::before,&::after{
+                        content: '';
+                        height: 2px;
+                        width: 0;
+                        bottom: 1;
+                        position: absolute;
+                        background: $color1;
+                        transition:  0.2s ease all;
+                        -moz-transition: 0.2s ease all;
+                    }
+                    &::before{
+                        left: 50%;
+                    }
+                    &::after{
+                        right: 50%;
+                    }
+
+                }
+            }
+        }
+    
+        .regiwave{
+                margin-left: 8px;
+                margin-top: 20px;
+                position: relative;
+                .regiemail:focus ~ .bar::before,
+                .regiemail:focus ~ .bar::after{
+                    width: 50%;
+                }
+                .regiemail{
+                    font-size: 16px;
+                    padding: 10px 10px 10px 5px;
+                    display: block;
+                    width: 260px;
+                    border: none;
+                    border-bottom: 2px solid $color4;
+                    background: transparent;
+                    &:focus{
+                        outline: none;
+                    }
+
+                }
+                .label{
+                    color: $color3;
+                    font-size: 16px;
+                    font-family: $font;
+                    font-weight: normal;
+                    position: absolute;
+                    pointer-events: none;
+                    left: 5px;
+                    top: 10px;
+                    display: flex;
+                }
+                .labelchar{
+                    transition: all $transition1 ease;
+                    transition-delay: calc(var(--index) * .05s);
+                }
+                .regiemail:focus ~ label .labelchar,
+                .regiemail:valid ~ label .labelchar{
+                    transform: translateY(-20px);
+                    font-size: 14px;
+                    color: $color1;
+                }
+                .bar{
+                    position: relative;
+                    display: block;
+                    width: 270px;
+                    &::before,&::after{
+                        content: '';
+                        height: 2px;
+                        width: 0;
+                        bottom: 1;
+                        position: absolute;
+                        background: $color1;
+                        transition:  0.2s ease all;
+                        -moz-transition: 0.2s ease all;
+                    }
+                    &::before{
+                        left: 50%;
+                    }
+                    &::after{
+                        right: 50%;
+                    }
+
+                }
+        }
+        .term{
+            height: 30px;
+            width: 270px;
+            display: flex;
+            align-items: center;
+            h6{
+                font-size: 14px;
+                font-family: $font;
+                color: $colorPrimary;
+                a{
+                    color: $color1;
+                    text-decoration: none;
+                    font-size: 14px;
+                    font-family: $font;
+                }
+            }
+        }
+        button{
+            width: 270px;
+            height: 35px;
+            border-radius: 8px;
+            outline: none;
+            border: none;
+            background: $color1;
+            color: $lightColor;
+            font-size: 16px;
+            font-weight: normal;
+            font-family: $font;
+            margin-top: 8px;
+            margin-bottom: 16px;
+        }
+
+    }
+    
+}
+.back-end{
+    animation: backend 0.6s ease forwards ;
+}
+@keyframes backend {
+    0% {
+        border-radius: 50%;
+        transform: translateX(50%);
+    }
+    50%{
+        border-radius: 25%;
+        rotate: 50deg;
+    }
+    100% {
+        border-radius: 50%;
+        transform: translateX(-50%);
+    }
+}
+.back-end-remove{
+    animation: backendremove 0.5s ease-in-out forwards ;
+}
+@keyframes backendremove {
+    0% {
+        border-radius: 50%;
+        transform: translateX(-50%);
+    }
+    50% {
+        
+        border-radius: 25%;
+        rotate: -50deg;
+    }
+    100% {
+        border-radius: 50%;
+        transform: translateX(50%);
+    }
+}
